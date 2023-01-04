@@ -21,9 +21,9 @@ train_dataset, validation_dataset = generate_datasets(dataset_path, 1)
 encoder_input = Input(shape=(256, 256, 1,), name='luminance')
 model_embedings = Input(shape=((1000,)), name='embeding')
 outputs = create_model(encoder_input)
-model = Model(inputs=[model_embedings, encoder_input], outputs=outputs)
+model = Model(inputs=[encoder_input], outputs=outputs)
 
-plot_model(model, to_file='model.png')
+#plot_model(model, to_file='model.png', show_shapes=True)
 
 callbacks = [TensorBoard(log_dir=".\\Tensorboard_logs", histogram_freq=1, profile_batch=100000000)]
 

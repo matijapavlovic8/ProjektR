@@ -14,6 +14,7 @@ def generate_datasets(images_path, batch_size_images):
         labels=None,
         label_mode='int',
         batch_size=batch_size_images,
+        color_mode='grayscale',
         image_size=(img_height, img_width),
         seed=42,
         validation_split=0.2,
